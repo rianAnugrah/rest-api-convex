@@ -1,0 +1,6 @@
+JWT_SECRET=your-secret-key
+CONVEX_URL=http://localhost:3210
+
+CONVEX_SELF_HOSTED_URL=http://localhost:3210
+CONVEX_SELF_HOSTED_ADMIN_KEY='convex-self-hosted|01ed03a8470c977fe3cdb4d7d7490d920c259d17ca24ac46f39fab3dc3ff018d02c0fd62572a9708e64edda9a0627ba1c2'
+
