@@ -13,10 +13,14 @@ export const checkUserExists = query({
   },
 });
 
+export const getUserByUsername = query(async ({ db }, { username }) => {
+  return await db.query("users").withIndex("by_username", (q) => q.eq("username", username)).collect();
+});
+
 // Register user baru
 export const registerUser = mutation({
-  args: { username: v.string(), password: v.string(), email: v.string() },
-  handler: async ({ db }, { username, password , email }) => {
+  args: { username: v.string(), passwordHash: v.string(), email: v.string() },
+  handler: async ({ db }, { username, passwordHash , email }) => {
     const existingUser = await db
       .query('users')
       .filter((q) => q.eq(q.field('username'), username))
@@ -29,7 +33,7 @@ export const registerUser = mutation({
     return await db.insert('users', {
       username,
       email,
-      password, // NOTE: Di real world, password harus di-hash!
+      passwordHash, // NOTE: Di real world, password harus di-hash!
       createdAt: Date.now(),
     });
   },

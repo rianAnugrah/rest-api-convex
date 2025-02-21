@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Node",
+      "baseUrl": "./",
+      "paths": {
+        "@/*": ["./*"]
+      },
+      "outDir": "dist",
+      "rootDir": "src",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "allowJs": true,  // <- Tambahin ini
+      "checkJs": false   // <- Biar nggak error dari JS files
+    },
+    "include": ["src"]
+  }
+  
